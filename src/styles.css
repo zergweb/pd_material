@@ -1,1 +1,15 @@
-/* You can add global styles to this file, and also import other style files */
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+.tile-contents-top > figure.mat-figure {
+  align-items: flex-start !important;
+  padding: 10px;
+}
+.tile-contents-top-column > figure.mat-figure {
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 10px 30px;
+}
+.lk-profile-form > .mat-list-item-content {
+  display: flex;
+  justify-content: space-between !important;
+}

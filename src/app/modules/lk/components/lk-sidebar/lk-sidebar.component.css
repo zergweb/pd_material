@@ -1,0 +1,20 @@
+@import '../../shared/shared-style.css';
+.lk-sidebar-wrapper > button {
+  display: block;
+  font-family: 'Ubuntu', sans-serif !important;
+  width: 100%;
+  font-size: 12pt;
+  color: #66615b;
+  padding:5px;
+}
+.lk-sidebar{
+  width:200px;
+}
+.active {
+  color: #68b3c8 !important; 
+}
+
+
+  .sidebar-li > li:focus {
+    outline: none;
+  }

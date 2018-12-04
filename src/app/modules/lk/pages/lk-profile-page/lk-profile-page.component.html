@@ -1,0 +1,149 @@
+<div class="page-head">
+  <!--<div class="page-head-title">Мой профиль</div>-->
+
+  <button type="button"
+          mat-raised-button color="primary"
+          class="change-btn"
+          *ngIf="!isChanged"
+          (click)="ChangeProfile()">
+    Редактировать
+  </button>
+  <button type="button"
+          mat-raised-button color="primary"
+          class="change-btn"
+          *ngIf="isChanged"
+          (click)="ChangeProfile()">
+    Сохранить
+  </button>
+</div>
+
+<mat-grid-list cols="6" rowHeight="100px">
+  <mat-grid-tile colspan="2" rowspan="6" class="tile-contents-top-column">
+    <mat-card class="about-info custom-card">
+      <img mat-card-image [src]="data.ThumbnailSrc | safe">
+      <mat-card-actions>
+        <input type="file" *ngIf="isChanged" />
+      </mat-card-actions>
+    </mat-card>
+    <mat-accordion class="lk-last-projects">
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Последние проекты
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-list>
+          <mat-list-item *ngFor="let project of lastProjects" class="lk-profile-form">
+          <div>{{project.Name}}</div>
+          <a mat-raised-button color="primary" color="primary" href=""> Подробнее</a>
+          <mat-divider></mat-divider>
+          </mat-list-item>         
+        </mat-list>
+
+      </mat-expansion-panel>
+    </mat-accordion>
+
+
+  </mat-grid-tile>
+  <mat-grid-tile colspan="4" rowspan="7" class="tile-contents-top">
+
+    <mat-card class="about-info">
+      <div class="about-list">
+        <div>
+          <p class="about-title">Имя:</p>
+          <p>
+            {{data.ThirdName}} {{data.FirstName}} {{data.SecondName}}
+          </p>
+        </div>
+        <div>
+          <p class="about-title">Факультет:</p>
+          <p>
+            {{data.Faculty}}
+          </p>
+        </div>
+        <div>
+          <p class="about-title">Направление:</p>
+          <p>
+            {{data.FacultyDirection}}
+          </p>
+        </div>
+        <div>
+          <p class="about-title">Курс:</p>
+          <p>
+            {{data.Course}}
+          </p>
+        </div>
+        <div>
+          <p class="about-title">Группа: </p>
+          <p>
+            {{data.Group}}
+          </p>
+        </div>
+        <div>
+          <p class="about-title">Навыки: </p>
+          <p>
+            {{data.Skills}}
+          </p>
+        </div>
+        <mat-accordion>
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Дополнительная информация
+              </mat-panel-title>
+
+            </mat-expansion-panel-header>
+            <div class="lk-profile-form">
+              <mat-form-field class="full-width">
+                <input matInput placeholder="Город" [value]="data.City" [disabled]="!isChanged">
+              </mat-form-field>
+              <mat-slide-toggle class="example-margin"
+                                color="primary"
+                                checked="checked"
+                                *ngIf="isChanged">
+              </mat-slide-toggle>
+            </div>
+            <div class="lk-profile-form">
+              <mat-form-field class="full-width">
+                <input matInput placeholder="Дата рождения" type="date" [disabled]="!isChanged">
+              </mat-form-field>
+              <mat-slide-toggle class="example-margin"
+                                color="primary"
+                                checked="checked"
+                                *ngIf="isChanged">
+              </mat-slide-toggle>
+            </div>
+            <div class="lk-profile-form">
+              <mat-form-field class="full-width">
+                <input matInput placeholder="Навыки" [value]="data.Skills" [disabled]="!isChanged">
+              </mat-form-field>
+              <mat-slide-toggle class="example-margin"
+                                color="primary"
+                                checked="checked"
+                                *ngIf="isChanged">
+              </mat-slide-toggle>
+            </div>
+            <div class="lk-profile-form">
+              <mat-form-field class="full-width">
+                <mat-label class="test-label">Обо мне</mat-label>
+                <textarea matInput
+                          cdkTextareaAutosize
+                          #autosize="cdkTextareaAutosize"
+                          cdkAutosizeMinRows="2"
+                          cdkAutosizeMaxRows="5"
+                          [disabled]="!isChanged"
+                          [value]="data.About"></textarea>
+              </mat-form-field>
+              <mat-slide-toggle class="example-margin"
+                                color="primary"
+                                checked="checked"
+                                *ngIf="isChanged">
+              </mat-slide-toggle>
+            </div>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </div>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>
+

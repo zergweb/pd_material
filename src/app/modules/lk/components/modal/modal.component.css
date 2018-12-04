@@ -1,0 +1,11 @@
+.show {
+  display: block;
+  opacity: 1;
+}
+.modal-back{
+  background-color:#000;
+  opacity:.4;
+  position:fixed;
+  height:100%;
+  width:100%;
+}

@@ -1,0 +1,41 @@
+@import '../../shared/shared-style.css';
+.about-list{
+  display:flex;
+  flex-direction:column;
+}
+.about-list>div{
+  display:flex;
+}
+.about-info {
+  padding: 20px;
+  width: 100%;
+  font-family: 'Ubuntu', sans-serif !important;
+}
+.about-title{
+width:150px;
+font-weight:600;
+ }
+
+.test-label{
+  font-size:20px;
+}
+.page-head-title {
+  font-size: 16pt;
+  font-weight: 600;
+  margin-left: 20px;
+}
+.lk-profile-form {
+  display: flex;
+  justify-content: space-between;
+}
+
+.full-width{
+  width:50%;
+  display:block;  
+}
+.custom-card{
+  margin-bottom:20px;
+}
+.lk-last-projects{
+  width:110%;
+}

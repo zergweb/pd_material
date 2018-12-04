@@ -1,0 +1,40 @@
+.container {
+  box-shadow: 0 2px 2px hsla(38,16%,76%,.5);
+}
+.min-height{
+  min-height:600px;
+}
+.fix-row{
+  margin:0 !important;
+}
+.sidebar {
+  height: calc(100vh);
+  background-color: #fff !important;
+}
+
+.card {
+  border-radius: 6px !important;
+  box-shadow: 0 2px 2px hsla(38,16%,76%,.5);
+  background-color: #fff;
+  color: #252422;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+}
+.card-content {
+  padding: 15px 15px 10px 15px;
+}
+
+.form-control-plaintext {
+  display: inline-block;
+  width: auto;
+}
+
+.page-head {
+  border-bottom: 1px solid #ddd;
+  padding: 20px 10px;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+

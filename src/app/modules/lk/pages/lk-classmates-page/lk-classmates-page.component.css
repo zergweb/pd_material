@@ -1,0 +1,31 @@
+@import '../../shared/shared-style.css';
+.form-control-borderless {
+  border: none;
+}
+
+  .form-control-borderless:hover, .form-control-borderless:active, .form-control-borderless:focus {
+    border: none;
+    outline: none;
+    box-shadow: none;
+  }
+.profile-src {
+  cursor: pointer;
+  opacity: .9;
+  transition: all linear .3s;
+  margin-top: 30px;
+}
+.profile-src.col{
+  flex-grow:0;
+}
+.profile-src:hover {
+  color: #68b3c8;
+  opacity: 1;
+}
+.avatar{
+  margin:0 auto;
+  background-color: #ccc;
+  height:60px;
+  width:60px;
+  border-radius:30%;
+
+}

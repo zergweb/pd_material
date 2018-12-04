@@ -1,0 +1,13 @@
+<mat-sidenav-container class="example-container lk">
+  <mat-sidenav #sidenav mode="side" opened class="lk-sidenav"
+               [fixedInViewport]="false" [fixedTopGap]="0">
+    <lk-sidebar></lk-sidebar>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+
+

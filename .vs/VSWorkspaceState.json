@@ -1,0 +1,18 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\app",
+    "\\src\\app\\modules",
+    "\\src\\app\\modules\\lk",
+    "\\src\\app\\modules\\lk\\components",
+    "\\src\\app\\modules\\lk\\components\\lk-sidebar",
+    "\\src\\app\\modules\\lk\\components\\page-header",
+    "\\src\\app\\modules\\lk\\pages",
+    "\\src\\app\\modules\\lk\\pages\\lk-page",
+    "\\src\\app\\modules\\lk\\services",
+    "\\src\\app\\modules\\lk\\shared"
+  ],
+  "SelectedNode": "\\src\\app\\modules\\lk\\pages\\lk-profile-page\\lk-profile-page.component.html",
+  "PreviewInSolutionExplorer": false
+}

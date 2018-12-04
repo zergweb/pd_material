@@ -1,0 +1,8 @@
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" (click)="showModal()">
+  Добавить сертификат
+</button>
+
+<modal [(isShow)]="ShowModal" Title="Добавить сертификат" (onChanged)="onChanged($event)">
+  {{Test}}
+</modal>
