@@ -1,0 +1,20 @@
+<h1 mat-dialog-title>Добавить сертификат</h1>
+<div mat-dialog-content>
+  <form class="example-form">
+    <mat-form-field class="full-width">
+      <input matInput placeholder="Название">
+    </mat-form-field>
+    <mat-form-field class="full-width">
+      <textarea matInput placeholder="Описание"></textarea>
+    </mat-form-field>
+    <input id="lk-upload-cert" type="file" hidden>
+  </form>
+  <button mat-raised-button color="primary">
+    <label for="lk-upload-cert">Выберите файл</label>    
+  </button>
+  
+</div>
+<div mat-dialog-actions class="dialog-act">
+  <button mat-raised-button color="primary" (click)="onNoClick()">Добавить</button>
+  <button mat-raised-button color="warn" [mat-dialog-close] cdkFocusInitial>Отмена</button>
+</div>

@@ -1,3 +1,37 @@
-<p>
-  lk-teachers-page works!
-</p>
+<div class="teachers-container">
+  <div class="search">
+    <mat-card>
+      <mat-card-content>
+        <mat-form-field class="search-width">
+          <input matInput placeholder="Поиск">
+        </mat-form-field>
+        <button type="button"
+                mat-raised-button color="primary"
+                class="search-btn">
+          Найти
+        </button>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <div class="teachers-list-card">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Преподаватели</mat-card-title>
+      </mat-card-header>
+      <mat-divider></mat-divider>
+      <mat-card-content class="teachers-list">
+
+        <div *ngFor="let teacher of Teachers" class="teachers-list-item">
+          <img class="teacher-avatar" [src]="teacher.ThumbUrl | safe" />
+          <div class="teacher-short-info">
+            <div class="teacher-name">{{teacher.LastName}} {{teacher.FirstName}} {{teacher.SecondName}}</div>
+            <div>{{teacher.Subject}}</div>
+            <a mat-raised-button color="primary" color="primary" href=""> Профиль</a>
+
+          </div>
+
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

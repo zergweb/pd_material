@@ -1,25 +1,27 @@
 <div class="page-head">
   <!--<div class="page-head-title">Мой профиль</div>-->
 
-  <button type="button"
-          mat-raised-button color="primary"
-          class="change-btn"
-          *ngIf="!isChanged"
-          (click)="ChangeProfile()">
-    Редактировать
-  </button>
-  <button type="button"
-          mat-raised-button color="primary"
-          class="change-btn"
-          *ngIf="isChanged"
-          (click)="ChangeProfile()">
-    Сохранить
-  </button>
+  
 </div>
 
-<mat-grid-list cols="6" rowHeight="100px">
-  <mat-grid-tile colspan="2" rowspan="6" class="tile-contents-top-column">
-    <mat-card class="about-info custom-card">
+<div class="profile-container">
+  <div class="profile-left-column">
+    <button type="button"
+            mat-raised-button color="primary"
+            class="change-btn"
+            *ngIf="!isChanged"
+            (click)="ChangeProfile()">
+      Редактировать
+    </button>
+    <button type="button"
+            mat-raised-button color="primary"
+            class="change-btn"
+            *ngIf="isChanged"
+            (click)="ChangeProfile()">
+      Сохранить
+    </button>
+
+    <mat-card class=" custom-card">
       <img mat-card-image [src]="data.ThumbnailSrc | safe">
       <mat-card-actions>
         <input type="file" *ngIf="isChanged" />
@@ -34,20 +36,17 @@
         </mat-expansion-panel-header>
         <mat-list>
           <mat-list-item *ngFor="let project of lastProjects" class="lk-profile-form">
-          <div>{{project.Name}}</div>
-          <a mat-raised-button color="primary" color="primary" href=""> Подробнее</a>
-          <mat-divider></mat-divider>
-          </mat-list-item>         
+            <div>{{project.Name}}</div>
+            <a mat-raised-button color="primary" color="primary" href=""> Подробнее</a>
+            <mat-divider></mat-divider>
+          </mat-list-item>
         </mat-list>
 
       </mat-expansion-panel>
     </mat-accordion>
-
-
-  </mat-grid-tile>
-  <mat-grid-tile colspan="4" rowspan="7" class="tile-contents-top">
-
-    <mat-card class="about-info">
+  </div>
+  <div class="profile-right-column">
+    <mat-card class="">
       <div class="about-list">
         <div>
           <p class="about-title">Имя:</p>
@@ -86,7 +85,7 @@
           </p>
         </div>
         <mat-accordion>
-          <mat-expansion-panel>
+          <mat-expansion-panel expanded="true">
             <mat-expansion-panel-header>
               <mat-panel-title>
                 Дополнительная информация
@@ -144,6 +143,6 @@
         </mat-accordion>
       </div>
     </mat-card>
-  </mat-grid-tile>
-</mat-grid-list>
+  </div>
+</div>
 

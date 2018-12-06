@@ -1,0 +1,9 @@
+.full-width {
+  width: 100%;
+}
+.upload-cert-btn{
+  cursor:pointer;
+}
+.dialog-act{
+  justify-content:flex-end;
+}

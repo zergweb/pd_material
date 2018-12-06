@@ -1,0 +1,45 @@
+.certificates-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.cert-list-card{
+  width:90%;
+}
+.certificates-list{
+  display: flex;
+  flex-wrap:wrap;
+  justify-content:flex-start;
+  padding-top:40px;
+}
+.certificates-list-item{
+  
+  width:200px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  margin-right:30px;
+}
+.certificates-list-item>img{
+  width:100%;
+}
+.cert-list-card{
+  margin-top:50px;
+}
+.cert-list-card>mat-card{
+  min-height:400px;
+}
+.add-cert-btn{
+  margin-bottom:15px;
+}
+.cert-header{
+  justify-content:space-between;
+}
+.cert-name{
+  text-align:center;
+  padding:20px 0;
+}
+.cert-short-info>button{
+  width:100%;
+}

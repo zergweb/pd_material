@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -11,6 +13,8 @@ import { MatListModule } from '@angular/material/list';
 import { MatInputModule } from '@angular/material/input';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatDialogModule } from '@angular/material/dialog';
 
 import { LkPageComponent } from './pages/lk-page/lk-page.component';
 import { LkSidebarComponent} from './components/lk-sidebar/lk-sidebar.component';
@@ -23,7 +27,10 @@ import { LkSearchPageComponent } from './pages/lk-search-page/lk-search-page.com
 import { Routes, RouterModule } from '@angular/router';
 import { PageHeaderComponent } from './components/page-header/page-header.components';
 import { ModalComponent } from './components/modal/modal.component';
-import { SafePipe} from './shared/pipes/SafePipe';
+import { SafePipe } from './shared/pipes/SafePipe';
+import { AddImageModalComponent} from './components/modal-components/add-image-modal/add-image.component';
+import { OpenImageComponent } from './components/modal-components/open-image/open-image.component';
+import { ChangeImageComponent} from './components/modal-components/change-image/change-image.component';
 
 @NgModule({
   imports: [
@@ -32,6 +39,7 @@ import { SafePipe} from './shared/pipes/SafePipe';
     BrowserAnimationsModule,
     MatButtonModule,
     FormsModule,
+    ReactiveFormsModule,
     MatSidenavModule,
     MatGridListModule,
     MatCardModule,
@@ -39,8 +47,9 @@ import { SafePipe} from './shared/pipes/SafePipe';
     MatListModule,
     MatInputModule,
     MatExpansionModule,
-    MatSlideToggleModule
-
+    MatSlideToggleModule,
+    MatPaginatorModule,
+    MatDialogModule
   ],
   declarations: [
     LkPageComponent,
@@ -53,8 +62,15 @@ import { SafePipe} from './shared/pipes/SafePipe';
     LkSearchPageComponent,
     PageHeaderComponent,
     ModalComponent,
+    AddImageModalComponent,
+    OpenImageComponent,
+    ChangeImageComponent,
     SafePipe
   ],
+  entryComponents: [
+    AddImageModalComponent,
+    OpenImageComponent,
+    ChangeImageComponent],
   providers: [
 
   ],

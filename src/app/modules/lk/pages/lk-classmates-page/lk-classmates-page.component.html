@@ -1,37 +1,36 @@
-<page-header [headerText]="'Одногрупники'"></page-header>
-<div class="row justify-content-center">
-  <div class="col-12 col-md-10 col-lg-8">
-    <form class="card card-sm">
-      <div class="card-body row no-gutters align-items-center">
-        <div class="col-auto">
-          <i class="fas fa-search h4 text-body"></i>
-        </div>
-     
-        <div class="col">
-          <input class="form-control form-control-lg form-control-borderless" type="search" placeholder="Искать...">
-        </div>
-    
-        <div class="col-auto">
-          <button class="btn btn-lg  btn-outline-primary " type="submit">Поиск</button>
-        </div>
-       
-      </div>
-    </form>
+
+<div class="classmates-container">
+  <div class="search">
+    <mat-card>
+      <mat-card-content>
+        <mat-form-field class="search-width">
+          <input matInput placeholder="Поиск">
+        </mat-form-field>
+        <button type="button"
+                mat-raised-button color="primary"
+                class="search-btn">
+          Найти
+        </button>
+      </mat-card-content>
+    </mat-card>
   </div>
-
-</div>
-<div class="col-md-12">
-  <div class="card min-height ">
-    <div class="card-content  row fix-row">    
-        <div *ngFor="let person of Classmates;" class="col profile-src">
-         <div class="avatar">
-
-         </div>
+ 
+  
+  <mat-card>
+    <mat-card-header >
+      <mat-card-title>Одногруппники</mat-card-title>
+     </mat-card-header>
+    <mat-divider></mat-divider>
+    <mat-card-content>
+      <div class="classmates-list">
+        <div *ngFor="let person of Classmates;" class="profile-src">
+          <img [src]="person.ThumbUrl | safe" class="avatar" />
           <div class="text-center">
             <a>{{person.FirstName}} {{person.LastName}} </a>
           </div>
-        </div>   
-    </div>
-  </div>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+  
 </div>
-

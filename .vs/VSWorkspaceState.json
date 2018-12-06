@@ -6,13 +6,13 @@
     "\\src\\app\\modules",
     "\\src\\app\\modules\\lk",
     "\\src\\app\\modules\\lk\\components",
-    "\\src\\app\\modules\\lk\\components\\lk-sidebar",
-    "\\src\\app\\modules\\lk\\components\\page-header",
+    "\\src\\app\\modules\\lk\\components\\modal-components",
+    "\\src\\app\\modules\\lk\\components\\modal-components\\change-image",
+    "\\src\\app\\modules\\lk\\model",
     "\\src\\app\\modules\\lk\\pages",
-    "\\src\\app\\modules\\lk\\pages\\lk-page",
-    "\\src\\app\\modules\\lk\\services",
-    "\\src\\app\\modules\\lk\\shared"
+    "\\src\\app\\modules\\lk\\pages\\lk-certificates-page",
+    "\\src\\app\\modules\\lk\\services"
   ],
-  "SelectedNode": "\\src\\app\\modules\\lk\\pages\\lk-profile-page\\lk-profile-page.component.html",
+  "SelectedNode": "\\src\\app\\modules\\lk\\components\\modal-components\\change-image\\change-image.component.html",
   "PreviewInSolutionExplorer": false
 }

@@ -1,8 +1,31 @@
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" (click)="showModal()">
-  Добавить сертификат
-</button>
+<div class="certificates-container">
+  <div class="cert-list-card">
+    <mat-card>
+      <mat-card-header class="cert-header">
+        <mat-card-title>Сертификаты</mat-card-title>
+        <button mat-raised-button color="primary"
+                (click)="openDialog()"
+                class="add-cert-btn"
+                >Добавить сертификат</button>
 
-<modal [(isShow)]="ShowModal" Title="Добавить сертификат" (onChanged)="onChanged($event)">
-  {{Test}}
-</modal>
+      </mat-card-header>
+      <mat-divider></mat-divider>
+      <mat-card-content class="certificates-list">
+
+        <div *ngFor="let certificate of Certificates; let i=index" class="certificates-list-item">
+          <img class="teacher-avatar"
+               [src]="certificate.ImgSrc | safe"
+               (click)="openImage(certificate.ImgSrc)" />
+          <div class="cert-short-info">
+            <div class="cert-name">{{certificate.Name}}</div>
+            <button mat-raised-button color="primary" (click)="changeImage(i)">Редактировать</button>
+          </div>
+
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+ 
+
+

@@ -39,3 +39,19 @@ font-weight:600;
 .lk-last-projects{
   width:110%;
 }
+.profile-container{
+  display: flex;
+  justify-content:center;
+}
+.profile-left-column{
+  width:300px;
+  margin-right:20px;
+}
+.profile-right-column {
+  width:500px;
+}
+.change-btn{
+  width:100%;
+  margin-bottom:20px;
+  margin-top:5px;
+}

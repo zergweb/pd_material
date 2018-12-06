@@ -1,21 +1,18 @@
 @import '../../shared/shared-style.css';
-.form-control-borderless {
-  border: none;
+.classmates-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 40px;
+  align-items: center;
 }
-
-  .form-control-borderless:hover, .form-control-borderless:active, .form-control-borderless:focus {
-    border: none;
-    outline: none;
-    box-shadow: none;
-  }
 .profile-src {
   cursor: pointer;
   opacity: .9;
   transition: all linear .3s;
   margin-top: 30px;
-}
-.profile-src.col{
-  flex-grow:0;
+  text-align: center;
+  width: 133px;
 }
 .profile-src:hover {
   color: #68b3c8;
@@ -27,5 +24,20 @@
   height:60px;
   width:60px;
   border-radius:30%;
-
+  overflow:hidden;
 }
+.classmates-list{
+  display:flex;
+ flex-wrap:wrap;
+}
+.search{
+  width:60%;
+  margin-bottom:30px;
+}
+.search-width{
+  width:80%;
+}
+.search-btn {
+  width: 20%;
+}
+
