@@ -1,0 +1,93 @@
+<div class="proj-container">
+  <div class="proj-card">
+    <mat-card>
+      <mat-card-header class="proj-header">
+        <mat-card-title>Добавление нового проекта</mat-card-title>
+
+
+      </mat-card-header>
+      <mat-divider></mat-divider>
+      <mat-card-content>
+        <form [formGroup]="projectForm" class="proj">
+          <div class="left-column">
+            <mat-form-field class="full-width">
+              <input matInput placeholder="Имя проекта" formControlName="Name">
+            </mat-form-field>
+            <mat-form-field class="full-width">
+              <mat-label class="test-label">Краткое описание проекта</mat-label>
+              <textarea matInput
+                        cdkTextareaAutosize
+                        #autosize="cdkTextareaAutosize"
+                        cdkAutosizeMinRows="3"
+                        cdkAutosizeMaxRows="10"
+                        formControlName="ShortDesc"></textarea>
+            </mat-form-field>
+            <mat-form-field class="full-width">
+              <mat-label class="test-label">Полное описание проекта</mat-label>
+              <textarea matInput
+                        cdkTextareaAutosize
+                        #autosize="cdkTextareaAutosize"
+                        cdkAutosizeMinRows="10"
+                        cdkAutosizeMaxRows="20"
+                        formControlName="LongDesc"></textarea>
+            </mat-form-field>
+            <mat-form-field class="full-width">
+              <input matInput placeholder="Ссылка на гит(если есть)" formControlName="GitUrl">
+            </mat-form-field>
+            <div class="betw isshow">
+              <div class="isshow-title">Отображать в на публичной странице</div>
+              <mat-slide-toggle class="config-toggle"
+                                color="primary"
+                                formControlName="IsShow">
+              </mat-slide-toggle>
+            </div>
+          </div>
+          <div class="right-column">
+            <form [formGroup]="projectDoc" class="doc-form">
+              <h3>Прикрепить документ к проекту</h3>
+              <mat-form-field class="full-width">
+                <input matInput placeholder="url" formControlName="DocUrl">
+              </mat-form-field>
+              <mat-form-field class="full-width">
+                <mat-label class="test-label">Описание</mat-label>
+                <textarea matInput
+                          cdkTextareaAutosize
+                          #autosize="cdkTextareaAutosize"
+                          cdkAutosizeMinRows="3"
+                          cdkAutosizeMaxRows="10"
+                          formControlName="Desc"></textarea>
+              </mat-form-field>
+              <input id="lk-add-doc" type="file" hidden>
+              <button mat-raised-button color="primary">
+                <label for="lk-add-doc">Выберите файл</label>
+              </button>
+              <button mat-raised-button color="primary" (click)="AddDoc()">
+                Прикрепить
+              </button>
+
+            </form>
+
+            <div *ngFor=" let doc of projectForm.value['ProjectDocs']; let i=index" class="doc-item">
+              <mat-card [matTooltip]="doc.Desc"
+                        matTooltipPosition="above">
+                <mat-card-content class="betw">
+                  <h3>{{doc.DocUrl}}</h3>
+                  <button mat-raised-button color="warn" (click)="DelDoc(i)">
+                    Удалить
+                  </button>
+                </mat-card-content>
+              </mat-card>
+            </div>
+
+
+          </div>
+          <button mat-button mat-raised-button color="primary" (click)="AddProject()">Добавить проект</button>
+          <button mat-button mat-raised-button color="primary" (click)="Test()">test</button>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+ 
+
+

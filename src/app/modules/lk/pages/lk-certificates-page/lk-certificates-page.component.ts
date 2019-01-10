@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FakeDataService } from '../../services/fake-data.service';
-import {Certificate} from '../../model/Certificate'
+import { Certificate} from '../../model/Certificate'
 import { MatDialog } from '@angular/material/dialog';
 import { AddImageModalComponent } from '../../components/modal-components/add-image-modal/add-image.component';
 import { OpenImageComponent } from '../../components/modal-components/open-image/open-image.component';
@@ -21,7 +21,7 @@ export class LkCertificatesPageComponent implements OnInit {
     this.Certificates = this.fd.UserCertificates();
   }
   openDialog(): void {
-    const dialogRef = this.dialog.open(AddImageModalComponent, {
+    let dialogRef = this.dialog.open(AddImageModalComponent, {
       width: '500px', data: {}
     });
     dialogRef.afterClosed().subscribe(result => {
@@ -38,7 +38,7 @@ export class LkCertificatesPageComponent implements OnInit {
   }
   changeImage(id: number): void {
 
-    const dialogRef = this.dialog.open(ChangeImageComponent, {
+    let dialogRef = this.dialog.open(ChangeImageComponent, {
       width: '500px', data: this.Certificates[id]
     });
     dialogRef.afterClosed().subscribe(result => {

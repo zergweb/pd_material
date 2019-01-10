@@ -1,0 +1,21 @@
+
+<div mat-dialog-content>
+ 
+ <div class="open-project-content">
+<div class="left">
+  <img [src]="data.ThumbnailUrl | safe">
+  <a mat-raised-button
+     class="full-width"
+     color="primary"
+     [href]="data.git">Открыть GitHub</a>
+</div>
+   <div class="right">
+     <h2>{{data.Name}}</h2>
+     <p>{{data.LongDesc}}</p>
+   </div>
+ </div>
+
+</div>
+<div mat-dialog-actions class="dialog-act">
+  <button mat-raised-button color="primary" (click)="close()">Закрыть</button>
+</div>

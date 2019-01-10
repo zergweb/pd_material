@@ -1,0 +1,42 @@
+.portfolio-container {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.portfolio-card {
+  width: 90%;
+}
+.cert-header {
+  justify-content: space-between;
+}
+.projects-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-top: 40px;
+}
+
+.projects-list-item {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 30px !important;
+}
+.project-actions {
+  justify-content: space-between;
+  flex-direction: row;
+  padding: 0px 10px;
+  display: flex;
+}
+.add-cert-btn {
+  margin-bottom: 15px;
+}
+.project-card-title{
+  text-decoration:none;
+}
+.projects-list-item:hover {
+  box-shadow: 0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.7);
+}

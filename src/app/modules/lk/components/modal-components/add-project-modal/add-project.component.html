@@ -1,0 +1,32 @@
+<h1 mat-dialog-title>Добавить новый проект</h1>
+<div mat-dialog-content>
+  <form [formGroup]="form">
+    <mat-form-field class="full-width">
+      <input matInput placeholder="Название"
+             formControlName="Name">
+    </mat-form-field>
+    <mat-form-field class="full-width">
+      <input matInput placeholder="Ссылка на гит"
+             formControlName="Git">
+    </mat-form-field>
+    <mat-form-field class="full-width">
+      <textarea matInput
+                placeholder="Короткое описание"
+                formControlName="ShortDesc"></textarea>
+    </mat-form-field>
+    <mat-form-field class="full-width">
+      <textarea matInput
+                placeholder="Полное описание"
+                formControlName="LongDesc"></textarea>
+    </mat-form-field>
+    <input id="lk-upload-thumb-project" type="file" hidden>
+  </form>
+  <button mat-raised-button color="primary">
+    <label for="lk-upload-thumb-project">Загрузить превью</label>
+  </button>
+
+</div>
+<div mat-dialog-actions class="dialog-act">
+  <button mat-raised-button color="primary" (click)="addProject()">Добавить</button>
+  <button mat-raised-button color="warn" [mat-dialog-close] cdkFocusInitial>Отмена</button>
+</div>

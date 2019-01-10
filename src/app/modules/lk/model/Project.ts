@@ -5,4 +5,6 @@ export class Project {
   public ThumbnailUrl?: string;
   public ShortDesc?: string;
   public LongDesc?: string;
+  public isShow?: boolean = true;
+  public GitUrl?: string;
 }

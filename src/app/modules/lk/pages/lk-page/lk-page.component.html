@@ -1,4 +1,5 @@
-<mat-sidenav-container class="example-container lk">
+<mat-sidenav-container class="example-container lk" *ngIf="store.CurrentStudent!=null">
+  
   <mat-sidenav #sidenav mode="side" opened class="lk-sidenav"
                [fixedInViewport]="false" [fixedTopGap]="0">
     <lk-sidebar></lk-sidebar>
@@ -8,6 +9,7 @@
     <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>
+<mat-spinner class="spinner" *ngIf="store.CurrentStudent==null"></mat-spinner>
 
 
 

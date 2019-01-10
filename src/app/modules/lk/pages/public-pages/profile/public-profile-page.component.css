@@ -1,0 +1,96 @@
+@import '../../../shared/shared-style.css';
+.about-list{
+  display:flex;
+  flex-direction:column;
+}
+.about-list>div{
+  display:flex;
+}
+.about-info {
+  padding: 20px;
+  width: 100%;
+  font-family: 'Ubuntu', sans-serif !important;
+}
+.about-title{
+width:150px;
+font-weight:600;
+ }
+
+.test-label{
+  font-size:20px;
+}
+.page-head-title {
+  font-size: 16pt;
+  font-weight: 600;
+  margin-left: 20px;
+}
+.lk-profile {
+  display: flex; 
+}
+
+.full-width{
+  width:50%;
+  display:block;  
+}
+.custom-card{
+  margin-bottom:20px;
+}
+.lk-last-projects{
+  width:110%;
+}
+.profile-container{
+  padding-top:30px;
+  display: flex;
+  justify-content:center;
+}
+.profile-left-column{
+  width:300px;
+  margin-right:20px;
+}
+.profile-right-column {
+  width:500px;
+}
+.change-btn{
+  width:100%;
+  margin-bottom:20px;
+  margin-top:5px;
+}
+.public-profile-certificates{
+  width:820px;
+  margin:0 auto;
+  margin-top:20px;
+}
+.accord-title-cert{
+  justify-content:center;
+}
+.certificates-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-top: 40px;
+}
+
+.certificates-list-item {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom:30px;
+ 
+}
+
+.certificates-list-item > img {
+    width: 100%;
+    cursor:pointer;
+  }
+.cert-short-info > button {
+  width: 100%;
+}
+.cert-name {
+  text-align: center;
+  padding: 20px 0;
+}
+.custom-paginator > .mat-paginator-outer-container > .mat-paginator-container > .mat-paginator-page-size {
+  display:none;
+}
+

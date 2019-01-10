@@ -1,5 +1,8 @@
 @import '@angular/material/prebuilt-themes/deeppurple-amber.css';
-
+body {
+  background-color: #EDE7F6;
+  margin:0;
+}
 .tile-contents-top > figure.mat-figure {
   align-items: flex-start !important;
   padding: 10px;

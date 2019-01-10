@@ -1,0 +1,14 @@
+.full-width {
+  width: 100%;
+}
+
+.dialog-act{
+  justify-content:flex-end;
+}
+.open-project-content{
+  display:flex;
+  flex-direction:row;
+}
+.right{
+  margin-left:30px;
+}

@@ -1,4 +1,4 @@
-<h1 mat-dialog-title>Добавить сертификат</h1>
+<h1 mat-dialog-title>Редактировать сертификат</h1>
 <div mat-dialog-content>
  
   <form [formGroup]="form">
@@ -21,6 +21,7 @@
 
 </div>
 <div mat-dialog-actions class="dialog-act">
-  <button mat-raised-button color="warn" (click)="close()">Отмена</button>
+  <button mat-raised-button color="warn" (click)="close()">Удалить</button>
+  <button mat-raised-button color="primary" (click)="close()">Отмена</button>
   <button mat-raised-button color="primary" [mat-dialog-close]="newCert" cdkFocusInitial>Сохранить</button>
 </div>

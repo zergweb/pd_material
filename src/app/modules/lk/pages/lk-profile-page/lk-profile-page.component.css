@@ -5,6 +5,13 @@
 }
 .about-list>div{
   display:flex;
+  padding-top:30px;
+}
+.about-content{
+    width:300px;
+  }
+.extraInfo{
+  margin-top:30px;
 }
 .about-info {
   padding: 20px;
@@ -14,10 +21,13 @@
 .about-title{
 width:150px;
 font-weight:600;
+margin-right:30px;
  }
-
-.test-label{
-  font-size:20px;
+.config-toggle{
+  width:50px;
+}
+.test-label {
+  font-size: 20px;
 }
 .page-head-title {
   font-size: 16pt;
@@ -30,7 +40,7 @@ font-weight:600;
 }
 
 .full-width{
-  width:50%;
+  width:300px;
   display:block;  
 }
 .custom-card{
@@ -55,3 +65,4 @@ font-weight:600;
   margin-bottom:20px;
   margin-top:5px;
 }
+

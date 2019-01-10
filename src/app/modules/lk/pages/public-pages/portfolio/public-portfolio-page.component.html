@@ -1,0 +1,56 @@
+
+
+<mat-drawer-container hasBackdrop="false" autosize>
+  <mat-drawer mode="side"
+              opened
+              [ngStyle]="{'width':sidewidth}">
+    <button mat-raised-button (click)="sideToggle()" *ngIf="sideIsOpen" class="sidebtn"><<</button>
+    <button mat-raised-button (click)="sideToggle()" *ngIf="!sideIsOpen" class="sidebtn">>></button>
+
+    <div class="side-opened-content" *ngIf="sideIsOpen">
+      <div class="thumbnial">
+        <img [src]="user.ThumbUrl | safe">
+      </div>
+      <div class="name">
+       {{user.FirstName}} {{user.LastName}}       
+      </div>
+      <div class="about">
+      {{portfolio.About}}
+      </div>
+      <div>
+        <a mat-raised-button color="primary" [href]="'/profile/'+userId">Профиль</a>
+      </div>
+    </div>
+    <div class="side-non-opened-content" *ngIf="!sideIsOpen">
+      <h2>Обо мне</h2>
+    </div>
+  </mat-drawer>
+  <mat-drawer-content >
+   <div class="portfolio-content">
+     <mat-card class="projects-list-item"
+               *ngFor="let project of currentProjects; let i=index">
+       <mat-card-header>
+         <div mat-card-avatar class="example-header-image"></div>
+         <mat-card-title>
+           <a [href]="project.Url" class="project-card-title">
+             {{project.Name}}
+           </a>
+         </mat-card-title>
+       </mat-card-header>
+       <img mat-card-image  [src]="project.ThumbnailUrl | safe">
+       <mat-card-content>
+         <p>
+           {{project.ShortDesc}}
+         </p>
+       </mat-card-content>
+       <mat-card-actions class="project-actions">
+         <button mat-raised-button color="primary"
+                 (click)="openProject(i)">
+           Подробнее
+         </button>
+        
+       </mat-card-actions>
+     </mat-card>
+   </div>
+  </mat-drawer-content>
+</mat-drawer-container>

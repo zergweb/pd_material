@@ -1,0 +1,123 @@
+
+<div class="profile-container">
+  <div class="profile-left-column">
+
+
+    <mat-card class="custom-card">
+      <img mat-card-image [src]="data.ThumbnailSrc | safe">
+      <mat-card-actions>
+        <input type="file" *ngIf="isChanged" />
+      </mat-card-actions>
+    </mat-card>
+    <button type="button"
+            mat-raised-button color="primary"
+            class="change-btn"
+            *ngIf="profileConfig.Portfolio"
+            >
+      Партфолио
+    </button>
+    
+  </div>
+  <div class="profile-right-column">
+    <mat-card class="">
+      <div class="about-list">
+        <div>
+          <p class="about-title">Имя:</p>
+          <p>
+            {{data.ThirdName}} {{data.FirstName}} {{data.SecondName}}
+          </p>
+        </div>
+        <div>
+          <p class="about-title">Факультет:</p>
+          <p>
+            {{data.Faculty}}
+          </p>
+        </div>
+        <div>
+          <p class="about-title">Направление:</p>
+          <p>
+            {{data.FacultyDirection}}
+          </p>
+        </div>
+        <div>
+          <p class="about-title">Курс:</p>
+          <p>
+            {{data.Course}}
+          </p>
+        </div>
+        <div>
+          <p class="about-title">Группа: </p>
+          <p>
+            {{data.Group}}
+          </p>
+        </div>
+        <mat-accordion>
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Дополнительная информация
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div class="lk-profile" *ngIf="profileConfig.City">
+              <p class="about-title">Город: </p>
+              <p>
+                {{data.City}}
+              </p>
+            </div>
+            <div class="lk-profile" *ngIf="profileConfig.Date">
+              <p class="about-title">Дата рождения: </p>
+              <p>
+              </p>
+            </div>
+            <div class="lk-profile" *ngIf="profileConfig.Skills">
+              <p class="about-title">Навыки: </p>
+              <p>
+                {{data.Skills}}
+              </p>
+            </div>
+            <div class="lk-profile" *ngIf="profileConfig.About">
+              <p class="about-title">Обо мне: </p>
+              <p>
+                {{data.About}}
+              </p>
+            </div>         
+          </mat-expansion-panel>
+        </mat-accordion>
+      </div>
+    </mat-card>
+  </div>
+</div>
+<div class="public-profile-certificates"
+     *ngIf="profileConfig.Certificates"
+     >
+  <mat-accordion>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title class="accord-title-cert">
+          Сертификаты
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <mat-card-content class="certificates-list">
+
+        <div *ngFor="let certificate of currentCertificates; let i=index" class="certificates-list-item">
+          <img class="teacher-avatar"
+               [src]="certificate.ImgSrc | safe"
+               (click)="openImage(certificate.ImgSrc)" />
+          <div class="cert-short-info">
+            <div class="cert-name">{{certificate.Name}}</div>
+          </div>
+        </div>
+        
+      </mat-card-content>
+      <mat-card-actions>
+        <mat-paginator class="custom-paginator"
+                       [length]="certificates.length"
+                       [pageSize]="pageSize"
+                       (page)="pageEvent = $event">
+        </mat-paginator>
+      </mat-card-actions>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>
+
+

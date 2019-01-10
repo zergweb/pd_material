@@ -1,10 +1,5 @@
-<div class="page-head">
-  <!--<div class="page-head-title">Мой профиль</div>-->
 
-  
-</div>
-
-<div class="profile-container">
+<div class="profile-container" >
   <div class="profile-left-column">
     <button type="button"
             mat-raised-button color="primary"
@@ -12,6 +7,12 @@
             *ngIf="!isChanged"
             (click)="ChangeProfile()">
       Редактировать
+    </button>
+    <button type="button"
+            mat-raised-button color="primary"
+            class="change-btn"
+            (click)="UpdateStud()">
+      Обновить
     </button>
     <button type="button"
             mat-raised-button color="primary"
@@ -35,7 +36,7 @@
           </mat-panel-title>
         </mat-expansion-panel-header>
         <mat-list>
-          <mat-list-item *ngFor="let project of lastProjects" class="lk-profile-form">
+          <mat-list-item *ngFor="let project of LastProjects" class="lk-profile-form">
             <div>{{project.Name}}</div>
             <a mat-raised-button color="primary" color="primary" href=""> Подробнее</a>
             <mat-divider></mat-divider>
@@ -45,83 +46,106 @@
       </mat-expansion-panel>
     </mat-accordion>
   </div>
+
   <div class="profile-right-column">
     <mat-card class="">
       <div class="about-list">
         <div>
-          <p class="about-title">Имя:</p>
-          <p>
-            {{data.ThirdName}} {{data.FirstName}} {{data.SecondName}}
-          </p>
+          <div class="about-title">Имя:</div>
+          <div class="about-content">
+            {{Student.LastName}} {{Student.FirstName}} {{Student.SecondName}}
+          </div>
+
         </div>
         <div>
-          <p class="about-title">Факультет:</p>
-          <p>
-            {{data.Faculty}}
-          </p>
+          <div class="about-title">Факультет:</div>
+          <div class="about-content">
+            {{Student.Group.FacultySection.Faculty.Name}}
+          </div>
+          <mat-slide-toggle class="config-toggle"
+                            color="primary"
+                            [(ngModel)]="Student.Config.Faculty"
+                            *ngIf="isChanged">
+          </mat-slide-toggle>
         </div>
         <div>
-          <p class="about-title">Направление:</p>
-          <p>
-            {{data.FacultyDirection}}
-          </p>
+          <div class="about-title">Направление:</div>
+          <div class="about-content">
+            {{Student.Group.FacultySection.Name}}
+          </div>
+          <mat-slide-toggle class="config-toggle"
+                            color="primary"
+                            [(ngModel)]="Student.Config.FacultySection"
+                            *ngIf="isChanged">
+          </mat-slide-toggle>
         </div>
         <div>
-          <p class="about-title">Курс:</p>
-          <p>
-            {{data.Course}}
-          </p>
+          <div class="about-title">Курс:</div>
+          <div class="about-content">
+            {{Student.Group.Course}}
+          </div>
+          <mat-slide-toggle class="config-toggle"
+                            color="primary"
+                            [(ngModel)]="Student.Config.Course"
+                            *ngIf="isChanged">
+          </mat-slide-toggle>
         </div>
         <div>
-          <p class="about-title">Группа: </p>
-          <p>
-            {{data.Group}}
-          </p>
+          <div class="about-title">Группа: </div>
+          <div class="about-content">
+            {{Student.Group.Name}}
+          </div>
+          <mat-slide-toggle class="config-toggle"
+                            color="primary"
+                            [(ngModel)]="Student.Config.Group"
+                            *ngIf="isChanged">
+          </mat-slide-toggle>
         </div>
         <div>
-          <p class="about-title">Навыки: </p>
-          <p>
-            {{data.Skills}}
-          </p>
+          <div class="about-title">Навыки: </div>
+          <div class="about-content">
+            <button mat-stroked-button
+                    *ngFor="let skill of Student.StudentSkills">
+              {{skill.Skill.Name}}
+            </button>
+          </div>
+          <mat-slide-toggle class="config-toggle"
+                            color="primary"
+                            [(ngModel)]="Student.Config.Skills"
+                            *ngIf="isChanged">
+          </mat-slide-toggle>
         </div>
-        <mat-accordion>
+        <mat-accordion class="extraInfo">
           <mat-expansion-panel expanded="true">
             <mat-expansion-panel-header>
               <mat-panel-title>
                 Дополнительная информация
               </mat-panel-title>
-
             </mat-expansion-panel-header>
             <div class="lk-profile-form">
               <mat-form-field class="full-width">
-                <input matInput placeholder="Город" [value]="data.City" [disabled]="!isChanged">
+                <input matInput placeholder="Город" [(ngModel)]="Student.City" [disabled]="!isChanged">
               </mat-form-field>
               <mat-slide-toggle class="example-margin"
                                 color="primary"
-                                checked="checked"
+                                [(ngModel)]="Student.Config.City"
                                 *ngIf="isChanged">
               </mat-slide-toggle>
             </div>
             <div class="lk-profile-form">
+
               <mat-form-field class="full-width">
-                <input matInput placeholder="Дата рождения" type="date" [disabled]="!isChanged">
+                <input matInput [matDatepicker]="dob" placeholder="Дата рождения" [(ngModel)]="Student.DOB" [disabled]="!isChanged">
+                <mat-datepicker-toggle matSuffix [for]="dob"></mat-datepicker-toggle>
+                <mat-datepicker #dob></mat-datepicker>
               </mat-form-field>
               <mat-slide-toggle class="example-margin"
                                 color="primary"
-                                checked="checked"
+                                [(ngModel)]="Student.Config.DOB"
                                 *ngIf="isChanged">
               </mat-slide-toggle>
             </div>
-            <div class="lk-profile-form">
-              <mat-form-field class="full-width">
-                <input matInput placeholder="Навыки" [value]="data.Skills" [disabled]="!isChanged">
-              </mat-form-field>
-              <mat-slide-toggle class="example-margin"
-                                color="primary"
-                                checked="checked"
-                                *ngIf="isChanged">
-              </mat-slide-toggle>
-            </div>
+
             <div class="lk-profile-form">
               <mat-form-field class="full-width">
                 <mat-label class="test-label">Обо мне</mat-label>
@@ -131,11 +155,11 @@
                           cdkAutosizeMinRows="2"
                           cdkAutosizeMaxRows="5"
                           [disabled]="!isChanged"
-                          [value]="data.About"></textarea>
+                          [(ngModel)]="Student.About"></textarea>
               </mat-form-field>
               <mat-slide-toggle class="example-margin"
                                 color="primary"
-                                checked="checked"
+                                [(ngModel)]="Student.Config.About"
                                 *ngIf="isChanged">
               </mat-slide-toggle>
             </div>

@@ -1,3 +1,120 @@
-<p>
-  lk-search-page works!
-</p>
+<div class="search-container">
+  <mat-accordion class="search-filters">
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Фильтры поиска
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div>
+        
+        <mat-horizontal-stepper linear="false" #stepper>
+                 
+            <mat-step [stepControl]="selectForm">
+              <form [formGroup]="selectForm">
+                <ng-template matStepLabel>Выбрать кого искать</ng-template>
+                <mat-form-field>
+                  <mat-select placeholder="Кого ищем" formControlName="selectPerson" required>
+                    <mat-option *ngFor="let person of Persons" [value]="person">
+                      {{person}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+
+                <button mat-button (click)="Test()">тест</button>
+                <div>
+                  <button mat-raised-button matStepperNext>Дальше</button>
+                </div>
+              </form>
+            </mat-step>              
+            <mat-step>
+              <form [formGroup]="httpForm">
+                <ng-template matStepLabel>Настройка поиска</ng-template>
+                <div class="filters" *ngIf="isStudent">
+                  <div class="left-column">
+                    <div>
+                      <mat-form-field class="full-width">
+                        <input matInput placeholder="Имя" formControlName="FirstName">
+                      </mat-form-field>
+                      <mat-form-field class="full-width">
+                        <input matInput placeholder="Фамилия" formControlName="LastName">
+                      </mat-form-field>
+                    </div>
+                    <div>
+                      <mat-form-field>
+                        <mat-select placeholder="Факультет" formControlName="Faculties">
+                          <mat-option *ngFor="let fac of Faculties" [value]="fac">
+                            {{fac.Name}}
+                          </mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                    </div>
+                    <div *ngIf="CurrentFaculty!=null">
+                      <mat-form-field>
+                        <mat-select placeholder="Направление" formControlName="FacultySections">
+                          <mat-option *ngFor="let sect of CurrentFaculty.FacultySections" [value]="sect">
+                            {{sect.Name}}
+                          </mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                    </div>
+                  </div>
+                  <div class="right-column">
+                    <div>
+                      <mat-form-field class="full-width">
+                        <input matInput placeholder="Город" formControlName="City" >
+                      </mat-form-field>
+                    </div>
+                    <div>
+                      <div>Дата рождения:</div>
+                      <mat-form-field class="full-width">
+                        <input matInput [matDatepicker]="ot" placeholder="От">
+                        <mat-datepicker-toggle matSuffix [for]="ot"></mat-datepicker-toggle>
+                        <mat-datepicker #ot></mat-datepicker>
+                      </mat-form-field>
+                      <mat-form-field class="full-width">
+                        <input matInput [matDatepicker]="do" placeholder="До">
+                        <mat-datepicker-toggle matSuffix [for]="do"></mat-datepicker-toggle>
+                        <mat-datepicker #do></mat-datepicker>
+                      </mat-form-field>
+                    </div>
+                  </div>
+                </div>
+
+
+                <button mat-raised-button (click)="Test()">Искать</button>
+                <div>
+                  <button mat-button matStepperPrevious>Назад</button>
+                </div>
+              </form>
+            </mat-step>
+
+        </mat-horizontal-stepper>
+      </div>
+
+    </mat-expansion-panel>
+  </mat-accordion>
+  <div class="search-card">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Результаты поиска: </mat-card-title>
+      </mat-card-header>
+      <mat-divider></mat-divider>
+      <mat-card-content class="teachers-list">
+        <div *ngIf="Students!=null">
+          <div *ngFor="let stud of Students" class="teachers-list-item">
+            <!--<img class="teacher-avatar" [src]="teacher.ThumbUrl | safe" />-->
+            <div class="teacher-short-info">
+              <div class="teacher-name">{{stud.LastName}} {{stud.FirstName}} {{stud.SecondName}}</div>
+              <div>{{stud.Group.Name}}</div>
+              <a mat-raised-button color="primary" color="primary" href=""> Профиль</a>
+
+            </div>
+          </div>
+        </div>
+          
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+</div>
