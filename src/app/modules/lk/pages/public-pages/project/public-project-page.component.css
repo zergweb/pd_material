@@ -1,0 +1,56 @@
+@import '../../../shared/shared-style.css';
+.project-container {
+  display: flex;
+  justify-content: center;
+}
+.custom-card{
+  width:1200px;
+}
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+padding-top:10px;
+}
+.left{width:70%;
+
+      padding:10px;
+      border-right:1px solid #ccc;
+      box-sizing:border-box;
+}
+.right {
+  width: 30%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+.doc-title{
+  font-weight:600;
+  padding:10px;
+  text-align:center;
+  font-size:1.1em;
+
+}
+.betw{display:flex;
+      flex-direction:column;
+      justify-content:center;
+}
+.betw>a{
+  margin-bottom:10px;
+}
+.doc-item{
+  margin-bottom:20px;
+}
+.info-item {
+
+  display:flex;
+  border-bottom: 1px solid #ccc;
+  justify-content:flex-start;
+}
+.card-title{
+  font-weight:700;
+}
+.pad{
+  padding:10px;
+}
+.pad2 {
+  padding: 10px 0px;
+}

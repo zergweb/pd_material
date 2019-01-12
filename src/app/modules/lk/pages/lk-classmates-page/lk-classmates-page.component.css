@@ -40,4 +40,7 @@
 .search-btn {
   width: 20%;
 }
-
+.classmates {
+  width: 100%;
+  min-height: 300px;
+}

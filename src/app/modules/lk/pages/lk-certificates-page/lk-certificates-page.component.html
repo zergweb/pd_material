@@ -14,8 +14,8 @@
 
         <div *ngFor="let certificate of Certificates; let i=index" class="certificates-list-item">
           <img class="teacher-avatar"
-               [src]="certificate.ImgSrc | safe"
-               (click)="openImage(certificate.ImgSrc)" />
+               [src]="certificate.Image.Url | safe"
+               (click)="openImage(certificate.Image.Url)" />
           <div class="cert-short-info">
             <div class="cert-name">{{certificate.Name}}</div>
             <button mat-raised-button color="primary" (click)="changeImage(i)">Редактировать</button>

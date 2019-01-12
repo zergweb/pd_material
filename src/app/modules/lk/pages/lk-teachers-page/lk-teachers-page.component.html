@@ -22,7 +22,7 @@
       <mat-card-content class="teachers-list">
 
         <div *ngFor="let teacher of Teachers" class="teachers-list-item">
-          <img class="teacher-avatar" [src]="teacher.ThumbUrl | safe" />
+          <img class="teacher-avatar" [src]="teacher.Thumbnail.Url | safe" />
           <div class="teacher-short-info">
             <div class="teacher-name">{{teacher.LastName}} {{teacher.FirstName}} {{teacher.SecondName}}</div>
             <div>{{teacher.Subject}}</div>

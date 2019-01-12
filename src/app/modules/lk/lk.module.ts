@@ -22,10 +22,11 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatSelectModule } from '@angular/material/select';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 import { LkPageComponent } from './pages/lk-page/lk-page.component';
 import { LkSidebarComponent } from './components/lk-sidebar/lk-sidebar.component';
-import { LkAddProjectPageComponent} from './pages/lk-addproject-page/lk-addproject-page.component';
+import { LkProjectPageComponent} from './pages/lk-project-page/lk-project-page.component';
 import { LkProfilePageComponent } from './pages/lk-profile-page/lk-profile-page.component';
 import { LkClassmatesPageComponent } from './pages/lk-classmates-page/lk-classmates-page.component';
 import { LkPortfolioPageComponent } from './pages/lk-portfolio-page/lk-portfolio-page.component';
@@ -33,7 +34,8 @@ import { LkTeachersPageComponent } from './pages/lk-teachers-page/lk-teachers-pa
 import { LkCertificatesPageComponent } from './pages/lk-certificates-page/lk-certificates-page.component';
 import { LkSearchPageComponent } from './pages/lk-search-page/lk-search-page.component';
 import { PublicProfilePageComponent } from './pages/public-pages/profile/public-profile-page.component';
-import { PublicPortfolioPageComponent} from './pages/public-pages/portfolio/public-portfolio-page.component';
+import { PublicPortfolioPageComponent } from './pages/public-pages/portfolio/public-portfolio-page.component';
+import { PublicProjectPageComponent } from './pages/public-pages/project/public-project-page.component';
 import { Routes, RouterModule } from '@angular/router';
 import { PageHeaderComponent } from './components/page-header/page-header.components';
 import { ModalComponent } from './components/modal/modal.component';
@@ -72,7 +74,8 @@ import { StoreDataService} from './services/store-data.service';
     MatProgressSpinnerModule,
     MatStepperModule,
     MatSelectModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatSnackBarModule
   ],
   declarations: [
     LkPageComponent,
@@ -85,7 +88,8 @@ import { StoreDataService} from './services/store-data.service';
     LkSearchPageComponent,
     PublicProfilePageComponent,
     PublicPortfolioPageComponent,
-    LkAddProjectPageComponent,
+    PublicProjectPageComponent,
+    LkProjectPageComponent,
     PageHeaderComponent,
     ModalComponent,
     AddImageModalComponent,

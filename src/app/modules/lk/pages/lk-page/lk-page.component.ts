@@ -5,7 +5,7 @@ import { UserData } from '../../model/UserData';
 import { ProfileConfig } from '../../model/ProfileConfig';
 import { Project } from '../../model/Project';
 import { LkProfileConfig } from '../../model/lk/LkProfileConfig';
-import { LkLastProjectItem } from '../../model/lk/LkLastProjectItem';
+import { LkProject } from '../../model/lk/LkProject';
 import { LkStudent } from '../../model/lk/lkStudent';
 @Component({
   selector: 'app-lk-page',
@@ -42,7 +42,7 @@ export class LkPageComponent implements OnInit {
   private loadlastProjects() {
     if (this.store.LastProjects == null) {
       this.httpser.getLastProjects(this.UserId).subscribe(
-        (data: LkLastProjectItem[]) => {
+        (data: LkProject[]) => {
           this.store.LastProjects = data;
           console.log(this.store.LastProjects);
         },

@@ -6,7 +6,7 @@ import { LkPortfolioPageComponent } from './pages/lk-portfolio-page/lk-portfolio
 import { LkTeachersPageComponent } from './pages/lk-teachers-page/lk-teachers-page.component';
 import { LkCertificatesPageComponent } from './pages/lk-certificates-page/lk-certificates-page.component';
 import { LkSearchPageComponent } from './pages/lk-search-page/lk-search-page.component';
-import { LkAddProjectPageComponent} from './pages/lk-addproject-page/lk-addproject-page.component';
+import { LkProjectPageComponent} from './pages/lk-project-page/lk-project-page.component';
 
 export const lkRoutes: Routes = [
   {
@@ -39,7 +39,11 @@ export const lkRoutes: Routes = [
   },
   {
     path: 'addproject',
-    component: LkAddProjectPageComponent
+    component: LkProjectPageComponent
+  },
+  {
+    path: 'changeproject/:id',
+    component: LkProjectPageComponent
   },
     { path: ' ', redirectTo: 'profile' }
 ];

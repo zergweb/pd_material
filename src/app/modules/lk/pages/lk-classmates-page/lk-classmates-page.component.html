@@ -16,7 +16,7 @@
   </div>
  
   
-  <mat-card>
+  <mat-card class="classmates">
     <mat-card-header >
       <mat-card-title>Одногруппники</mat-card-title>
      </mat-card-header>
@@ -24,9 +24,9 @@
     <mat-card-content>
       <div class="classmates-list">
         <div *ngFor="let person of Classmates;" class="profile-src">
-          <img [src]="person.ThumbUrl | safe" class="avatar" />
+          <img [src]="person.Thumbnail.Url | safe" class="avatar" />
           <div class="text-center">
-            <a>{{person.FirstName}} {{person.LastName}} </a>
+            <a [href]="'/profile/'+person.Id">{{person.FirstName}} {{person.LastName}} </a>
           </div>
         </div>
       </div>

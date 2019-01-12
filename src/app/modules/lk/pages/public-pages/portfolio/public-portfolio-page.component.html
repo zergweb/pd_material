@@ -1,6 +1,4 @@
-
-
-<mat-drawer-container hasBackdrop="false" autosize>
+<mat-drawer-container hasBackdrop="false" autosize *ngIf="Portfolio!=null">
   <mat-drawer mode="side"
               opened
               [ngStyle]="{'width':sidewidth}">
@@ -9,16 +7,16 @@
 
     <div class="side-opened-content" *ngIf="sideIsOpen">
       <div class="thumbnial">
-        <img [src]="user.ThumbUrl | safe">
+        <img [src]="Student.Thumbnail.Url | safe">
       </div>
       <div class="name">
-       {{user.FirstName}} {{user.LastName}}       
+       {{Student.FirstName}} {{Student.LastName}}       
       </div>
       <div class="about">
-      {{portfolio.About}}
+      {{Student.About}}
       </div>
       <div>
-        <a mat-raised-button color="primary" [href]="'/profile/'+userId">Профиль</a>
+        <a mat-raised-button color="primary" [href]="'/profile/'+Student.Id">Профиль</a>
       </div>
     </div>
     <div class="side-non-opened-content" *ngIf="!sideIsOpen">
@@ -37,7 +35,7 @@
            </a>
          </mat-card-title>
        </mat-card-header>
-       <img mat-card-image  [src]="project.ThumbnailUrl | safe">
+       <img mat-card-image  [src]="project.Thumbnail.Url | safe">
        <mat-card-content>
          <p>
            {{project.ShortDesc}}

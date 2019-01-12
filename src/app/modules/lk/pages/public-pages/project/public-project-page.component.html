@@ -1,0 +1,46 @@
+
+<div *ngIf="Project!=null">
+  <div class="project-container" >
+  
+      <mat-card class="custom-card">
+        <mat-card-header class="cert-header">
+          <mat-card-title>
+            <div class="card-title">{{Project.Name}}</div>
+          </mat-card-title>
+
+        </mat-card-header>
+        <mat-divider></mat-divider>
+        <mat-card-content class="wrapper">
+          <div class="left">
+            <div class="info-item" *ngIf="Date!=null">
+              <div class="doc-title">Дата создания:</div>
+              <div class="pad">{{Date}}</div>
+            </div>
+            <div class="info-item pad2" *ngIf="Date!=null">
+              <div class="doc-title">GitHub:</div>
+              <a [href]="Project.Git" mat-raised-button color="primary">Открыть</a>
+            </div>
+            <div *ngIf="Project.LongDesc!=null">
+              <h3 class="doc-title">О проекте: </h3>
+              <div class="pad">{{Project.LongDesc}}</div>
+            </div>
+          </div>
+          <div class="right">
+            <div *ngFor=" let doc of Project.ProjectDocs; let i=index" class="doc-item">
+              <mat-card 
+                        matTooltipPosition="above">
+                <mat-card-content class="betw">
+                  <div class="doc-title">{{doc.DocName}}</div>
+                  <div>{{doc.Desc}}</div>
+                  <a [href]="doc.DocUrl" mat-raised-button color="primary">Скачать</a>
+                </mat-card-content>
+              </mat-card>
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>     
+       
+  </div>
+</div>
+
+
