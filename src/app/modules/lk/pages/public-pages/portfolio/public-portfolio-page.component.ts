@@ -25,10 +25,10 @@ export class PublicPortfolioPageComponent implements OnInit {
   public Student: LkStudent;
 
   public userId: number;
-  public portfolio: Portfolio;
-  public profileConfig: ProfileConfig;
-  public user: Person;
-  public projects : Project[];
+
+  
+
+
   public pageSize: number = 6;
   public sidewidth = '450px';
   public sideIsOpen = true;
@@ -42,14 +42,7 @@ export class PublicPortfolioPageComponent implements OnInit {
   ) {
     this.userId = this.activateRoute.snapshot.params['id'];
     console.log(this.activateRoute.snapshot.params);
-    this.portfolio = this.fakedata.getPortfolio(this.userId);
-    console.log(this.portfolio);
-    if (this.portfolio == null) {
-     // this.router.navigate(['']);
-    } else {   
-      this.projects = this.portfolio.Projects;
-      this.user = this.portfolio.LkUser;
-    }   
+      
   }
 
   get currentProjects(): LkProject[] {
@@ -61,14 +54,7 @@ export class PublicPortfolioPageComponent implements OnInit {
     }
 
   }
-  openProject(projectId: number): void {
-    const dialogRef = this.dialog.open(OpenProjectComponent, {
-      maxWidth: '80%', data: this.projects[projectId]
-    });
-    dialogRef.afterClosed().subscribe(result => {
 
-    });
-  }
   ngOnInit() {
     this.loadPortfolio();
     this.loadStudent()
@@ -83,7 +69,7 @@ export class PublicPortfolioPageComponent implements OnInit {
     this.userId = this.activateRoute.snapshot.params['id'];
     this.serv.getPublicPortfolio(this.userId).subscribe(
       (r: LkPortfolio) => {
-        console.log(r);
+        //console.log(r);
         r.Projects.forEach((x) => {
           x.Thumbnail == null ? x.Thumbnail = this.store.DefaultImage : 0;
         });
@@ -91,7 +77,7 @@ export class PublicPortfolioPageComponent implements OnInit {
       },
       (er) => {
         console.log(er);
-        this.loadPortfolio();
+        //this.loadPortfolio();
       }
     );
   }

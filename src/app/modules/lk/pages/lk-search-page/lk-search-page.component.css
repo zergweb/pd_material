@@ -37,7 +37,7 @@ margin-right:30px;
   flex-direction: row;
   justify-content: flex-start;
   margin-bottom: 20px !important;
-  width: 50%;
+  width: 400px;
   position: relative;
 }
 
@@ -72,4 +72,12 @@ margin-right:30px;
   font-size: 12pt;
   font-weight: 600;
 }
-
+.buttons{
+  display:flex;
+  justify-content:center;
+}
+.teachers-list {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 40px;
+}

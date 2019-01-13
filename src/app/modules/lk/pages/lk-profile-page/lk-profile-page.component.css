@@ -65,4 +65,16 @@ margin-right:30px;
   margin-bottom:20px;
   margin-top:5px;
 }
-
+.lk-profile-form{
+  padding:10px 0 !important;
+}
+.prname{
+  max-width:100px;
+}
+.addskil{width:100%;
+         display:flex;
+         justify-content:space-between;
+}
+.addskil>button{
+  height:60px;
+}

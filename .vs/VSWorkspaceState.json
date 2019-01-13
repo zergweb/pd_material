@@ -5,16 +5,12 @@
     "\\src\\app",
     "\\src\\app\\modules",
     "\\src\\app\\modules\\lk",
-    "\\src\\app\\modules\\lk\\components\\modal-components\\change-image",
+    "\\src\\app\\modules\\lk\\model",
+    "\\src\\app\\modules\\lk\\model\\lk",
     "\\src\\app\\modules\\lk\\pages",
-    "\\src\\app\\modules\\lk\\pages\\lk-portfolio-page",
-    "\\src\\app\\modules\\lk\\pages\\lk-project-page",
-    "\\src\\app\\modules\\lk\\pages\\public-pages",
-    "\\src\\app\\modules\\lk\\pages\\public-pages\\profile",
-    "\\src\\app\\modules\\lk\\pages\\public-pages\\project",
-    "\\src\\app\\modules\\lk\\services",
-    "\\src\\app\\shared"
+    "\\src\\app\\modules\\lk\\pages\\lk-profile-page",
+    "\\src\\app\\modules\\lk\\pages\\lk-project-page"
   ],
-  "SelectedNode": "\\src\\app\\modules\\lk\\services\\req-http.service.ts",
+  "SelectedNode": "\\src\\app\\app.module.ts",
   "PreviewInSolutionExplorer": false
 }

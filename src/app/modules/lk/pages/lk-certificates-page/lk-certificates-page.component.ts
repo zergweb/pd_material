@@ -27,12 +27,12 @@ export class LkCertificatesPageComponent implements OnInit {
   private loadCertificates() {
     this.serv.getCertificates(this.store.CurrentStudent.Id).subscribe(
       (resp:LkCertificate[]) => {
-        console.log(resp);
+     //   console.log(resp);
         this.Certificates = resp;
       },
       (error) => {
         console.log(error);
-        this.loadCertificates();
+      // this.loadCertificates();
       }
     )
   }

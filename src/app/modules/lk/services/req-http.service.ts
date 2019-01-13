@@ -6,7 +6,7 @@ import { LkPublicProfile} from '../model/lk/LkPublicProfile';
 import {StoreDataService } from './store-data.service';
 @Injectable({ providedIn: 'root' })
 export class ReqHttpService {
-  private serv = "https://localhost:44316/";
+  private serv = "http://pd-api.std-267.ist.mospolytech.ru/";
   private myHeaders = new HttpHeaders().set('crossDomain', 'true');
   constructor(private http: HttpClient) { }
 

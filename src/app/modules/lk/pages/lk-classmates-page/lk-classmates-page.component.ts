@@ -23,13 +23,15 @@ export class LkClassmatesPageComponent implements OnInit {
   private loadClassmates() {
     this.serv.getClassmates(this.store.CurrentStudent.Id).subscribe(
       (r:LkStudent[]) => {
-        console.log(r);
+        //console.log(r);
         r.forEach((x) => {
           x.Thumbnail == null ? x.Thumbnail = this.store.DefaultImage : 0;
         });
         this.Classmates = r;
       },
-      (e) => { console.log(e)}
+      (e) => {
+        console.log(e)
+      }
     );
   }
 }

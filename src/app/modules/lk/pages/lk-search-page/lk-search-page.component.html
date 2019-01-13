@@ -8,7 +8,7 @@
       </mat-expansion-panel-header>
       <div>
         
-        <mat-horizontal-stepper linear="false" #stepper>
+        <mat-horizontal-stepper linear="true" #stepper>
                  
             <mat-step [stepControl]="selectForm">
               <form [formGroup]="selectForm">
@@ -21,7 +21,7 @@
                   </mat-select>
                 </mat-form-field>
 
-                <button mat-button (click)="Test()">тест</button>
+                
                 <div>
                   <button mat-raised-button matStepperNext>Дальше</button>
                 </div>
@@ -51,8 +51,8 @@
                     </div>
                     <div *ngIf="CurrentFaculty!=null">
                       <mat-form-field>
-                        <mat-select placeholder="Направление" formControlName="FacultySections">
-                          <mat-option *ngFor="let sect of CurrentFaculty.FacultySections" [value]="sect">
+                        <mat-select placeholder="Направление" formControlName="FacultySections" panelClass="custom-select">
+                          <mat-option *ngFor="let sect of CurrentFaculty.FacultySections" [value]="sect" class="select">
                             {{sect.Name}}
                           </mat-option>
                         </mat-select>
@@ -62,18 +62,18 @@
                   <div class="right-column">
                     <div>
                       <mat-form-field class="full-width">
-                        <input matInput placeholder="Город" formControlName="City" >
+                        <input matInput placeholder="Город" formControlName="City">
                       </mat-form-field>
                     </div>
                     <div>
                       <div>Дата рождения:</div>
                       <mat-form-field class="full-width">
-                        <input matInput [matDatepicker]="ot" placeholder="От">
+                        <input matInput [matDatepicker]="ot" placeholder="От" formControlName="DOBstart">
                         <mat-datepicker-toggle matSuffix [for]="ot"></mat-datepicker-toggle>
                         <mat-datepicker #ot></mat-datepicker>
                       </mat-form-field>
                       <mat-form-field class="full-width">
-                        <input matInput [matDatepicker]="do" placeholder="До">
+                        <input matInput [matDatepicker]="do" placeholder="До" formControlName="DOBend">
                         <mat-datepicker-toggle matSuffix [for]="do"></mat-datepicker-toggle>
                         <mat-datepicker #do></mat-datepicker>
                       </mat-form-field>
@@ -81,8 +81,11 @@
                   </div>
                 </div>
 
-
-                <button mat-raised-button (click)="Test()">Искать</button>
+                <div class="buttons">
+                  <button mat-raised-button color="primary" (click)="Search()">Искать</button>
+                  <button mat-raised-button color="warn" (click)="Search()">Обнулить фильтр</button>
+                </div>
+                
                 <div>
                   <button mat-button matStepperPrevious>Назад</button>
                 </div>
@@ -101,18 +104,25 @@
       </mat-card-header>
       <mat-divider></mat-divider>
       <mat-card-content class="teachers-list">
-        <div *ngIf="Students!=null">
+        
+        <div *ngIf="isSearch">
+          <mat-spinner class="spinner"></mat-spinner>
+        </div>
+        <div *ngIf="!isSearch && Students==null">
+          Ничего не найденно
+        </div>
+        <div *ngIf="Students!=null" class="teachers-list">
           <div *ngFor="let stud of Students" class="teachers-list-item">
-            <!--<img class="teacher-avatar" [src]="teacher.ThumbUrl | safe" />-->
+            <img class="teacher-avatar" [src]="stud.Thumbnail.Url | safe" />
             <div class="teacher-short-info">
               <div class="teacher-name">{{stud.LastName}} {{stud.FirstName}} {{stud.SecondName}}</div>
               <div>{{stud.Group.Name}}</div>
-              <a mat-raised-button color="primary" color="primary" href=""> Профиль</a>
+              <a mat-raised-button color="primary" [href]="'profile'+stud.Id"> Профиль</a>
 
             </div>
           </div>
         </div>
-          
+
       </mat-card-content>
     </mat-card>
   </div>

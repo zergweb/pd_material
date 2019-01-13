@@ -45,7 +45,7 @@ export class PublicProfilePageComponent implements OnInit {
       },
       (er) => {
         console.log(er);
-        this.LoadProfile(id);
+       // this.LoadProfile(id);
       }
     );
   }

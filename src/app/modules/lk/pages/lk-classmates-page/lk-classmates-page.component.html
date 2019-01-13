@@ -26,7 +26,7 @@
         <div *ngFor="let person of Classmates;" class="profile-src">
           <img [src]="person.Thumbnail.Url | safe" class="avatar" />
           <div class="text-center">
-            <a [href]="'/profile/'+person.Id">{{person.FirstName}} {{person.LastName}} </a>
+            <a [href]="'/profile/'+person.Id" class="link">{{person.FirstName}} {{person.LastName}} </a>
           </div>
         </div>
       </div>

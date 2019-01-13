@@ -11,16 +11,17 @@
     <button type="button"
             mat-raised-button color="primary"
             class="change-btn"
+             *ngIf="isChanged"
             (click)="UpdateStud()">
-      Обновить
+      Сохранить
     </button>
-    <button type="button"
+    <!--<button type="button"
             mat-raised-button color="primary"
             class="change-btn"
             *ngIf="isChanged"
             (click)="ChangeProfile()">
       Сохранить
-    </button>
+    </button>-->
 
     <mat-card class=" custom-card">
       <img mat-card-image [src]="data.ThumbnailSrc | safe">
@@ -37,7 +38,7 @@
         </mat-expansion-panel-header>
         <mat-list>
           <mat-list-item *ngFor="let project of LastProjects" class="lk-profile-form">
-            <div>{{project.Name}}</div>
+            <div class="prname">{{project.Name}}</div>
             <a mat-raised-button color="primary" color="primary" href=""> Подробнее</a>
             <mat-divider></mat-divider>
           </mat-list-item>
@@ -101,6 +102,12 @@
                             *ngIf="isChanged">
           </mat-slide-toggle>
         </div>
+        <div *ngIf="isChanged" class="addskil">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Название навыка" [(ngModel)]="newSkillName">
+          </mat-form-field>
+          <button mat-raised-button color="primary" (click)="AddNewSkill()">Добавить</button>
+        </div>
         <div>
           <div class="about-title">Навыки: </div>
           <div class="about-content">
@@ -115,6 +122,7 @@
                             *ngIf="isChanged">
           </mat-slide-toggle>
         </div>
+
         <mat-accordion class="extraInfo">
           <mat-expansion-panel expanded="true">
             <mat-expansion-panel-header>

@@ -16,3 +16,6 @@ body {
   display: flex;
   justify-content: space-between !important;
 }
+.custom-select {
+  max-width: none !important;
+} 

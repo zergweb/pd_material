@@ -44,3 +44,7 @@
   width: 100%;
   min-height: 300px;
 }
+.link {
+  text-decoration: none;
+  color: rgba(0,0,0,.87);
+}

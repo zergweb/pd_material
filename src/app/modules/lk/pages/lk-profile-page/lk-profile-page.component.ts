@@ -8,7 +8,8 @@ import { ProfileConfig } from '../../model/ProfileConfig';
 import { Project } from '../../model/Project';
 import { LkProfileConfig } from '../../model/lk/LkProfileConfig';
 import { LkLastProjectItem} from '../../model/lk/LkLastProjectItem';
-import { LkStudent} from '../../model/lk/lkStudent';
+import { LkStudent } from '../../model/lk/lkStudent';
+import { LkStudentSkill } from '../../model/lk/LkStudentSkill';
 @Component({
   selector: 'app-lk-profile-page',
   templateUrl: './lk-profile-page.component.html',
@@ -23,7 +24,8 @@ export class LkProfilePageComponent implements OnInit {
   public isChanged: boolean = false;
   public Student:LkStudent=this.store.CurrentStudent;
   public ProfileConfig: LkProfileConfig;
-  public LastProjects:Project[]= this.store.LastProjects;
+  public LastProjects: Project[] = this.store.LastProjects;
+  public newSkillName: string;
   constructor(
     private fakedata: FakeDataService,
     private httpser: ReqHttpService,
@@ -32,16 +34,19 @@ export class LkProfilePageComponent implements OnInit {
     this.data = fakedata.CurrentUserData();
     this.profileConfig = fakedata.CurrentUserProfileConfig();
     this.lastProjects = fakedata.LastProjects();
-
-
-
   }
-
+  public AddNewSkill() {
+    console.log(this.newSkillName);
+    if (this.newSkillName != null) {
+      this.Student.StudentSkills.push({ Skill: { Name: this.newSkillName } });
+    } 
+  }
   ChangeProfile() {
     this.isChanged = !this.isChanged;
     console.log(this.Student);
   }
   UpdateStud() {
+    this.isChanged = !this.isChanged;
     this.httpser.updateStud(this.Student).subscribe(
       () => { },
       error => console.log(error)

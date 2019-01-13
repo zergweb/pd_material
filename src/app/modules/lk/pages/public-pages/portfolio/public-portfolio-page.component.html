@@ -26,13 +26,13 @@
   <mat-drawer-content >
    <div class="portfolio-content">
      <mat-card class="projects-list-item"
-               *ngFor="let project of currentProjects; let i=index">
+               *ngFor="let project of currentProjects;">
        <mat-card-header>
          <div mat-card-avatar class="example-header-image"></div>
          <mat-card-title>
-           <a [href]="project.Url" class="project-card-title">
+           
              {{project.Name}}
-           </a>
+        
          </mat-card-title>
        </mat-card-header>
        <img mat-card-image  [src]="project.Thumbnail.Url | safe">
@@ -42,10 +42,10 @@
          </p>
        </mat-card-content>
        <mat-card-actions class="project-actions">
-         <button mat-raised-button color="primary"
-                 (click)="openProject(i)">
+         <a [href]="'/project/'+userId+'/'+project.ProjectId" mat-raised-button color="primary"
+                 >
            Подробнее
-         </button>
+         </a>
         
        </mat-card-actions>
      </mat-card>

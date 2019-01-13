@@ -30,12 +30,12 @@ export class PublicProjectPageComponent implements OnInit {
   private LoadProject(id: number) {    
     this.serv.getPublicProject(id).subscribe(
       (resp: LkProject) => {
-        console.log(resp)
+      //  console.log(resp)
         this.Project = resp;      
       },
       (er) => {
         console.log(er);
-        this.LoadProject(id);
+        //this.LoadProject(id);
       }
     );
   }
@@ -49,9 +49,10 @@ export class PublicProjectPageComponent implements OnInit {
   }
 
   get Date(): string {
+    if (this.Project.Date != null) {
     let t = this.Project.Date.toString().match(/\d{4}-\d{2}-\d{2}/)[0];
-    if (t != null) {
+  
       return t
-    } else { return ""; }
+    } else { return null; }
   }
 }

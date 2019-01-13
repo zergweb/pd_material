@@ -45,7 +45,7 @@ export class LkPortfolioPageComponent implements OnInit {
     if (this.store.Portfolio == null) {
       this.httpser.getPortfolio(this.store.CurrentStudent.Id).subscribe(
         (data: LkPortfolio) => {
-          console.log(data);
+         // console.log(data);
           data.Projects.forEach((x) => {
             x.Thumbnail == null ? x.Thumbnail = this.store.DefaultImage : 0;
           });
@@ -54,7 +54,7 @@ export class LkPortfolioPageComponent implements OnInit {
         },
         (error) => {
           console.log(error);
-          this.loadPortfolio();
+        //  this.loadPortfolio();
         }
       );
     } else {

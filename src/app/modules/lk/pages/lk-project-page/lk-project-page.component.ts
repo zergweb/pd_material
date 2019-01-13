@@ -92,7 +92,7 @@ export class LkProjectPageComponent implements OnInit {
         Gallery: responce.Gallery,
         ProjectDocs: responce.ProjectDocs
       });
-      console.log(this.projectForm.value);
+     // console.log(this.projectForm.value);
     },
       (error)=>{console.log(error)})
   }

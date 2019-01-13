@@ -25,14 +25,14 @@ export class LkPageComponent implements OnInit {
     if (this.store.CurrentStudent == null) {
       this.httpser.getStudent(this.UserId).subscribe(
         (data: LkStudent) => {
-          console.log(data.DOB.toString());
+        //  console.log(data.DOB.toString());
           this.store.CurrentStudent = data;
-          console.log(this.store.CurrentStudent);
+         // console.log(this.store.CurrentStudent);
         },
         (error) => {
           if (error.name == "HttpErrorResponse") {
             console.log(error);
-            this.loadStud();
+           // this.loadStud();
           }
 
         }
@@ -44,11 +44,11 @@ export class LkPageComponent implements OnInit {
       this.httpser.getLastProjects(this.UserId).subscribe(
         (data: LkProject[]) => {
           this.store.LastProjects = data;
-          console.log(this.store.LastProjects);
+          //console.log(this.store.LastProjects);
         },
         (error) => {
           if (error.name == "HttpErrorResponse") {
-            this.loadlastProjects();
+           // this.loadlastProjects();
             console.log(error);
           }
         }

@@ -70,11 +70,15 @@
             <div *ngFor=" let doc of projectForm.value['ProjectDocs']; let i=index" class="doc-item">
               <mat-card [matTooltip]="doc.Desc"
                         matTooltipPosition="above">
-                <mat-card-content class="betw">
-                  <h3>{{doc.DocName}}</h3>
-                  <button mat-raised-button color="warn" (click)="DelDoc(i)">
-                    Удалить
-                  </button>
+                <mat-card-content class="betw1">
+                  <h3 class="doc-title">{{doc.DocName}}</h3>
+                  
+                    <a mat-raised-button color="primary" [href]="doc.Url" class="cbtn">Скачать</a>
+                    <button mat-raised-button color="warn" (click)="DelDoc(i)" class="cbtn">
+                      Удалить
+                    </button>
+                 
+                  
                 </mat-card-content>
               </mat-card>
             </div>
@@ -82,9 +86,9 @@
 
           </div>
           <button mat-button mat-raised-button color="primary" (click)="MainButtonEvent()">{{Page.EventButtonName}}</button>
-          <button mat-button mat-raised-button color="primary" (click)="Test()">test</button>
+          <!--<button mat-button mat-raised-button color="primary" (click)="Test()">test</button>
           
-          <button mat-button mat-raised-button color="primary" (click)="openSnackBar()">snack</button>
+          <button mat-button mat-raised-button color="primary" (click)="openSnackBar()">snack</button>-->
         </form>
       </mat-card-content>
     </mat-card>
